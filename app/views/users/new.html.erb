@@ -1,0 +1,26 @@
+<div class="ui inverted segment">
+  <%= form_for(@user, :html => { class: "ui equal width inverted form", role: "form" }) do |f| %>
+    <div class="fields">
+      <div class="field">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, placeholder: "First name", autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, placeholder: "Last name" %>
+      </div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <%= f.label :email_address %>
+        <%= f.text_field :email_address, placeholder: "Email address" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, placeholder: "Enter a password" %>
+      </div>
+    </div>
+    <%= f.submit(@user.new_record? ? "Sign up" : "Update your account", class: "ui submit button") %>
+  </div>
+  <% end %>
+</div>
